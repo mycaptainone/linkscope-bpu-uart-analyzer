@@ -12,6 +12,15 @@ Real-time capture, framing, statistics, and visualization for embedded debugging
 
 ---
 
+⚡ Quick Start (1 minute)
+
+1. Flash ESP32-S3 firmware
+2. Connect TX → GPIO18
+3. Run Windows EXE
+4. Select COM port
+5. Press Start
+
+6. 
 ## Features
 
 - Up to 921600 baud UART capture
