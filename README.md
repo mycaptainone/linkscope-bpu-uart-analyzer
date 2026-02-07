@@ -20,7 +20,6 @@ Real-time capture, framing, statistics, and visualization for embedded debugging
 4. Select COM port
 5. Press Start
 
-6. 
 ## Features
 
 - Up to 921600 baud UART capture
