@@ -25,6 +25,26 @@ Real-time capture, framing, statistics, and visualization for embedded debugging
 
 ---
 
+## Quick Setup (Beginner Friendly)
+
+This tool works by tapping into your target MCU's UART TX line.
+
+Just connect:
+
+Target MCU TX  --->  ESP32-S3 GPIO18 (RX)  
+Target MCU GND --->  ESP32-S3 GND
+
+Supported targets:
+- STM32
+- ESP32 / ESP8266
+- NRF52 / NRF53
+- RP2040
+- Arduino
+- Custom MCUs
+
+No firmware modification is required on the target device.
+Simply transmit UART data and monitor it on PC.
+
 ## System Architecture
 
 [ Target MCU TX ] --> [ ESP32-S3 RX ] --> USB --> [ PC Analyzer ]
