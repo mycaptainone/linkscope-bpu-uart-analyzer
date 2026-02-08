@@ -12,6 +12,25 @@ Real-time capture, framing, statistics, and visualization for embedded debugging
 
 ---
 
+# LinkScope - Debug High-Speed UART in Real Time
+
+❌ Terminal shows "fine"  
+❌ But packets are dropping  
+❌ You can't see jitter
+
+✅ LinkScope shows it instantly.
+
+[GIF HERE]
+
+- Detect drops
+- Show jitter
+- Monitor buffer
+- Analyze frames
+
+Works with ESP32-S3
+
+
+
 ⚡ Quick Start (1 minute)
 
 1. Flash firmware to ESP32-S3
