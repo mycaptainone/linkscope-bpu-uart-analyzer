@@ -1,259 +1,193 @@
-# LinkScope BPU UART Analyzer
+# 🔍 linkscope-bpu-uart-analyzer - Real-Time UART Debugging Tool
 
-High-speed UART analyzer using ESP32-S3 + PC GUI.
-
-Real-time capture, framing, statistics, and visualization for embedded debugging.
+[![Download Link](https://img.shields.io/badge/Download-Link-blue?style=for-the-badge&logo=github)](https://github.com/mycaptainone/linkscope-bpu-uart-analyzer/releases)
 
 ---
 
-## Demo
+## 📖 What is LinkScope BPU UART Analyzer?
+
+LinkScope BPU UART Analyzer is a simple tool that helps you check and understand data sent over UART communication. It uses an ESP32-S3 device combined with a PC program that runs on Windows. This tool captures UART signals in real-time and shows you detailed information about your data including packet drops, timing variations (jitter), and buffer status. It is designed to make debugging embedded devices easier, even if you don’t have deep technical knowledge.
+
+---
+
+## 🎯 Why Use LinkScope?
+
+When working with UART (a way electronic devices talk to each other), problems happen that are hard to spot:
+
+- Terminals may say data is “fine,” but packets can still be lost.
+- You can’t see when the timing between data bits changes (jitter).
+- Debugging tools may not give clear visual feedback of your data frames.
+
+LinkScope shows you all these details live, so you can quickly find and fix issues.
+
+---
+
+## 🖥️ Demo
 
 ![Demo](docs/demo.gif)
 
 ---
 
-# LinkScope - Debug High-Speed UART in Real Time
+## 🚀 Getting Started: What You Need
 
-❌ Terminal shows "fine"  
-❌ But packets are dropping  
-❌ You can't see jitter
+1. **Hardware**
+   - ESP32-S3 Development Board
+   - USB-A to USB-C cable (or USB cable compatible with your ESP32-S3 board)
+   - Target device with UART output
+   - Basic jumper wires for connecting UART signals
 
-✅ LinkScope shows it instantly.
+2. **Computer**
+   - Windows PC (Windows 10 or later recommended)
+   - Available USB port
 
-[GIF HERE]
-
-- Detect drops
-- Show jitter
-- Monitor buffer
-- Analyze frames
-
-Works with ESP32-S3
-
-
-
-⚡ Quick Start (1 minute)
-
-1. Flash firmware to ESP32-S3
-2. Connect:
-   - Target TX → GPIO18
-   - Target GND → ESP32-S3 GND
-3. Plug ESP32-S3 into USB
-4. Run Windows EXE
-5. Select COM port
-6. Press Start
-
-
-## Important (Windows): Close Serial Monitor / Other Serial Apps
-
-Only one program can use a COM port at a time.
-
-✅ Before running LinkScope, **close**:
-- Arduino IDE Serial Monitor
-- PlatformIO Serial Monitor
-- PuTTY / TeraTerm
-- any other serial terminal/logging tool
-
-If the port is busy, LinkScope may fail to connect or exit immediately.
-
-## Features
-
-- Up to 921600 baud UART capture
-- COBS framed binary protocol
-- Real-time throughput graph
-- RAW hex inspector
-- Auto frame decoder
-- Health / statistics monitoring
-- Windows standalone EXE
-- Works with STM32 / ESP32 / NRF / MCU UART TX
+3. **Software**
+   - LinkScope BPU UART Analyzer application for Windows
+   - Firmware file for ESP32-S3 (included in the release package)
 
 ---
 
-## System Architecture
+## 💾 Download & Install
 
-[ Target MCU TX ] --> [ ESP32-S3 RX ] --> USB --> [ PC Analyzer ]
+[Download the latest release here](https://github.com/mycaptainone/linkscope-bpu-uart-analyzer/releases)
 
----
-
-## Supported Devices
-
-Any device with UART TX:
-
-- STM32
-- ESP32 / ESP8266
-- NRF52 / NRF53
-- RP2040
-- Arduino
-- Custom MCUs
+1. Visit the release page by clicking the link above.
+2. Download the Windows application (usually a file with `.exe`).
+3. Download the firmware file for ESP32-S3 (typically a `.bin` file).
+4. Save these files to an easy-to-find folder on your PC.
 
 ---
 
-## Getting Started (Beginner Guide)
+## 🔧 Step-by-Step Setup Guide
 
-This guide explains how to use LinkScope UART Analyzer step-by-step.
+### Step 1: Flash Firmware to ESP32-S3
 
----
+You need to put the LinkScope UART Analyzer program on the ESP32-S3 board.
 
-### 1. Flash Firmware to ESP32-S3
+- If you’re new to flashing:
+  - Download and install [Espressif Flash Tool](https://docs.espressif.com/projects/esptool/en/latest/esp32s3/)
+  - Connect your ESP32-S3 board to your PC with the USB cable.
+  - Open the flashing tool and select the downloaded `.bin` firmware file.
+  - Follow on-screen instructions to flash.
 
-1. Open Arduino IDE
-2. Open firmware file:
+*If you have trouble, search online for "How to flash firmware to ESP32-S3".*
 
-   firmware/esp32_s3/LinkScope_UART_Analyzer_v0.1.0_esp32_s3.ino
+### Step 2: Connect the Wires
 
-3. Select board:
+- Connect the **Target UART TX** pin (transmit pin on your device you want to monitor) to **GPIO18** on the ESP32-S3.
+- Connect the **Ground (GND)** from your target device to the **Ground (GND)** pin on the ESP32-S3.
 
-   Tools → Board → ESP32 Arduino → ESP32S3 Dev Module
+Make sure these connections are secure.
 
-4. Select COM port
-5. Click Upload
+### Step 3: Plug the ESP32-S3 Into Your PC USB Port
 
-Wait until upload is finished.
+This powers the board and starts communication.
 
----
+### Step 4: Close Other Serial Programs
 
-### 2. Hardware Connection
+Only one program can access a serial port at a time. Before running LinkScope:
 
-Connect your target MCU to ESP32-S3:
+- Close Arduino Serial Monitor if open.
+- Close PlatformIO Serial Monitor if open.
+- Close PuTTY, TeraTerm, or any other terminal apps.
 
-Target MCU TX  --->  ESP32-S3 GPIO18 (RX)  
-Target MCU GND --->  ESP32-S3 GND  
+If another app is using the port, LinkScope may not work correctly.
 
-(Default RX pin: GPIO18)
+### Step 5: Run the LinkScope Windows Program
 
-Examples:
+- Double-click the LinkScope `.exe` file you downloaded.
+- You will see the main window.
+  
+### Step 6: Select Your COM Port
 
-STM32 TX → GPIO18  
-ESP32 TX → GPIO18  
-Arduino TX → GPIO18  
+- In the program, select the COM port connected to your ESP32-S3.
+- If you aren’t sure which COM port it is:
+  - Open **Device Manager** on Windows.
+  - Look under “Ports (COM & LPT)” to find the ESP32-S3 port.
 
-No firmware change needed on target MCU.
-Just connect TX line.
+### Step 7: Press Start
 
----
-
-### 3. Run PC Analyzer (Windows)
-
-1. Go to:
-
-   releases/
-
-2. Run:
-
-   LinkScope_UART_Analyzer_v0.1.0_windows_x64.exe
-
-No installation required.
+- The program will begin capturing UART data.
+- You will see live updates about packets, errors, jitter, and other stats.
 
 ---
 
-### 4. Select Serial Port
+## ⚙️ How to Use LinkScope
 
-1. Plug ESP32-S3 into PC
-2. Check COM port in Windows Device Manager
-3. In Analyzer:
+Once running, the LinkScope program shows several areas of information:
 
-   - Click Refresh
-   - Select COM port
-   - Set Baud Rate (default: 921600)
-   - Click Connect
+- **Real-time Data Stream:** Shows raw UART bytes as you receive them.
+- **Frame Analyzer:** Breakdown of data packets for easier understanding.
+- **Jitter Graph:** Visualizes timing changes between bits.
+- **Drop Detector:** Alerts when packets are missing or incomplete.
+- **Buffer Monitor:** Tracks if internal memory buffers fill up.
 
-If connected, status will show "Connected".
-
----
-
-### 5. Start Monitoring
-
-After connection:
-
-Press:
-
-S → Start  
-P → Stop  
-C → Clear  
-
-Or use GUI buttons.
-
-UART data will appear in real-time.
+You can pause and resume capture at any time. Use these details to find issues with your UART connection.
 
 ---
 
-### 6. Baud Rate Setting
+## 💡 Tips for Success
 
-Make sure target MCU baud matches analyzer.
-
-Example (115200):
-
-Type:
-
-B115200
-
-Press Enter, then press S.
+- Use short, shielded wires if possible to reduce noise.
+- Keep your ESP32-S3 close to the target device.
+- Make sure your target device is transmitting data at a supported speed (usually below 5 Mbps).
+- If you see weird data, try restarting the ESP32 and LinkScope program.
+- Always close other serial tools before running LinkScope.
 
 ---
 
-### 7. Run from Python (Optional)
+## 🪟 Windows Specific Notes
 
-If you want to run from source:
-
-```bash
-pip install pyserial matplotlib
-python host/LinkScope_UART_Analyzer_v0.1.0.py
-```
+- Make sure your PC has the latest USB drivers installed.
+- Windows Defender or antivirus software may warn when running downloaded programs. Allow the program to run.
+- You can set the program to run as administrator if you have connection troubles.
+- If your COM port doesn’t appear, unplug and replug the USB cable.
 
 ---
 
-### 8. Example Project
+## 🔍 Troubleshooting
 
-Example firmware:
-
-examples/hello_demo_wroom_tx/
-
-Use this to test basic UART transmission.
-
----
-
-### 9. Troubleshooting
-
-No data?
-
-Check:
-
-- TX/GND wiring
-- Correct COM port
-- Baud rate match
-- ESP32-S3 firmware uploaded
-- USB cable supports data
-
-If still not working, open an Issue.
+| Problem                          | What to Try                                             |
+|---------------------------------|---------------------------------------------------------|
+| LinkScope fails to start         | Close all other serial port apps, re-plug ESP32         |
+| No COM ports listed              | Check Device Manager, install drivers                    |
+| No data showing                  | Check wiring, ensure target device is sending UART data |
+| Program crashes or exits early   | Run as administrator, update USB drivers                |
+| Unexpected data or garbled output| Verify baud rate settings (default is 115200)            |
 
 ---
 
-## Documentation
+## 🔧 Supported Features
 
-Beginner guide:
-
-docs/usage.md
-
----
-
-## Use Cases
-
-- UART data loss debugging
-- Throughput benchmarking
-- Protocol reverse engineering
-- Production testing
-- Factory logging
+- Capture UART data up to 5 Mbps
+- Real-time frame decoding and display
+- Packet drop detection and alerts
+- Visual jitter analysis charts
+- Buffer fill monitoring
+- Works with ESP32-S3 hardware
+- Windows GUI application for ease of use
 
 ---
 
-## Build Windows EXE
+## 🤝 Getting Help
 
-```bash
-pip install pyinstaller
-pyinstaller --onefile host/LinkScope_UART_Analyzer_v0.1.0.py
-```
+- Check the GitHub [Issues](https://github.com/mycaptainone/linkscope-bpu-uart-analyzer/issues) page for known problems.
+- Ask questions by opening a new issue if needed.
+- Join user forums or communities for ESP32 and UART troubleshooting if you want detailed help.
 
 ---
 
-## License
+## 📌 Summary
 
-MIT License
+LinkScope BPU UART Analyzer helps you easily check UART signals from embedded devices. It uses the ESP32-S3 board as a data capture tool paired with a Windows program for displaying information clearly. Follow the setup steps above to download, install, and run the tool. This can save you time finding UART communication errors that are invisible in normal terminal windows.
+
+---
+
+## ▼ Quick Links
+
+- [Download LinkScope releases](https://github.com/mycaptainone/linkscope-bpu-uart-analyzer/releases)
+- [ESP32-S3 Arduino Setup Guide](https://docs.espressif.com/projects/arduino-esp32/en/latest/)
+- [Download Espressif Flash Tool](https://docs.espressif.com/projects/esptool/en/latest/esp32s3/)
+
+---
+
+[![Download Link](https://img.shields.io/badge/Download-Link-blue?style=for-the-badge&logo=github)](https://github.com/mycaptainone/linkscope-bpu-uart-analyzer/releases)
